@@ -36,10 +36,11 @@ function windowResized(){
 		resizeCanvas(w, 500);
 		moveSushi();
 	}
+}
 
 function draw(){
 
-background(250,245,240);
+	background(250,245,240);
 
 fill(0);
 
