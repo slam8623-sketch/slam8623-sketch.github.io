@@ -8,29 +8,34 @@ let gameOver = false;
 
 function setup(){
 
-createCanvas(800,500);
+	const container = document.getElementById('game-container');
+	const w = container ? container.clientWidth : 800;
+	const h = 500;
+	const cnv = createCanvas(w, h);
+	if (container) cnv.parent('game-container');
 
-textAlign(CENTER,CENTER);
+	textAlign(CENTER, CENTER);
 
-moveSushi();
+	moveSushi();
 
-setInterval(function(){
-
-if(!gameOver){
-
-time--;
-
-if(time<=0){
-
-gameOver=true;
-
-}
-
-}
-
-},1000);
+	setInterval(function(){
+		if(!gameOver){
+			time--;
+			if(time<=0){
+				gameOver=true;
+			}
+		}
+	},1000);
 
 }
+
+function windowResized(){
+	const container = document.getElementById('game-container');
+	if(container){
+		const w = container.clientWidth;
+		resizeCanvas(w, 500);
+		moveSushi();
+	}
 
 function draw(){
 

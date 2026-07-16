@@ -26,3 +26,24 @@ h1{
 .button:hover{
     background:#d62828;
 }
+
+.main-content{
+    display:flex;
+    justify-content:center;
+    padding:20px;
+}
+
+.game-container{
+    width:100%;
+    max-width:800px;
+    background:#fff;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    border-radius:8px;
+    overflow:hidden;
+}
+
+#game-container canvas{
+    display:block;
+    width:100%;
+    height:auto;
+}
