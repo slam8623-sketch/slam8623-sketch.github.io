@@ -8,16 +8,18 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     line-height: 1.6;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
 }
 
 /* NAVIGATION BAR */
 .navbar {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #667eea 100%);
     padding: 1rem 0;
     position: sticky;
     top: 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     z-index: 100;
+    backdrop-filter: blur(10px);
 }
 
 .nav-content {
@@ -32,6 +34,12 @@ body {
 .logo {
     color: white;
     font-size: 1.8rem;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
 }
 
 .nav-links {
@@ -54,11 +62,45 @@ body {
 
 /* HERO SECTION */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #667eea 100%);
+    background-attachment: fixed;
     color: white;
-    padding: 100px 20px;
+    padding: 120px 20px;
     text-align: center;
     animation: slideDown 0.8s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,250 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: cover;
+    animation: wave 15s linear infinite;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes wave {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(1200px); }
 }
 
 .hero-content h1 {
@@ -95,15 +137,19 @@ body {
 .types-section {
     max-width: 1200px;
     margin: 60px auto;
-    padding: 0 20px;
+    padding: 60px 20px;
     animation: slideUp 0.8s ease-out;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(29, 71, 42, 0.05) 100%);
+    border-radius: 20px;
 }
 
 .types-section h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #667eea;
+    color: #1a472a;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .cards-container {
@@ -115,17 +161,49 @@ body {
 .card {
     background: white;
     border-radius: 15px;
-    padding: 2rem;
+    overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    transform: translateY(-15px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
     border-color: #667eea;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card h3 {
@@ -141,21 +219,22 @@ body {
 
 /* RESOURCES SECTION */
 .resources-section {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
     padding: 60px 20px;
     text-align: center;
+    color: white;
 }
 
 .resources-section h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #667eea;
+    color: white;
 }
 
 .resources-section p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    color: #666;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .resource-links {
@@ -178,31 +257,286 @@ body {
     padding: 1.5rem;
     background: white;
     border-radius: 10px;
-    color: #667eea;
+    color: #1a472a;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .resource-links a:hover {
     background: #667eea;
     color: white;
     transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
 }
 
 /* FOOTER */
 .footer {
-    background: #333;
+    background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
     color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
+    padding: 3rem 20px 1rem;
 }
 
-.footer p {
-    margin: 0.5rem 0;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #667eea;
+}
+
+.footer-section p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #667eea;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 2rem 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.9;
+}
+
+/* WHY SUSHI SECTION */
+.why-sushi-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 60px 20px;
+    animation: slideUp 0.8s ease-out;
+}
+
+.why-sushi-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1a472a;
+    font-weight: 700;
+}
+
+.benefits-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(29, 71, 42, 0.1) 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    border-color: #667eea;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(29, 71, 42, 0.15) 100%);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.benefit-card h3 {
+    color: #1a472a;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* HISTORY SECTION */
+.history-section {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(29, 71, 42, 0.08) 100%);
+    padding: 60px 20px;
+    margin: 60px 0;
+}
+
+.history-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1a472a;
+    font-weight: 700;
+}
+
+.history-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.history-text p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.history-image {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.history-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.history-image:hover img {
+    transform: scale(1.05);
+}
+
+/* INGREDIENTS SECTION */
+.ingredients-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 60px 20px;
+    animation: slideUp 0.8s ease-out;
+}
+
+.ingredients-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1a472a;
+    font-weight: 700;
+}
+
+.ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.ingredient-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-left: 4px solid #667eea;
+}
+
+.ingredient-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    border-left-color: #1a472a;
+}
+
+.ingredient-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.ingredient-item h3 {
+    color: #1a472a;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.ingredient-item p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* FACTS SECTION */
+.facts-section {
+    background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
+    color: white;
+    padding: 60px 20px;
+    margin: 60px 0;
+}
+
+.facts-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: white;
+    font-weight: 700;
+}
+
+.facts-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.fact {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.fact:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.fact-number {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.fact-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.fact-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
 /* ANIMATIONS */
@@ -262,5 +596,28 @@ body {
     
     .cards-container {
         grid-template-columns: 1fr;
+    }
+    
+    .history-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .why-sushi-section h2,
+    .ingredients-section h2,
+    .history-section h2,
+    .facts-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .benefit-card,
+    .ingredient-item,
+    .fact {
+        padding: 1.5rem;
+    }
+    
+    .benefit-icon,
+    .ingredient-icon,
+    .fact-number {
+        font-size: 2rem;
     }
 }
