@@ -1,34 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sushi Chef Challenge</title>
-
-<link rel="stylesheet" href="style.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
-<script src="sketch.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushi World</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
+  <header class="navbar">
+    <div class="nav-content">
+      <div class="logo">Sushi World</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#why">Why Sushi</a>
+        <a href="#resources">Resources</a>
+        <a href="game.html">Play</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="header">
-<h1>🍣 Sushi Chef Challenge 🍣</h1>
-<p>Click the sushi before time runs out!</p>
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Explore Sushi Culture and Fun</h1>
+      <p>Learn about sushi styles, ingredients, history, and play a sushi chef game on its own page.</p>
+      <button class="cta-button" onclick="window.location.href='game.html'">Play the Game</button>
+    </div>
+  </section>
 
-</head>
+  <section id="about" class="types-section">
+    <h2>Discover Sushi</h2>
+    <div class="cards-container">
+      <div class="card">
+        <div class="card-image"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Sushi"></div>
+        <div class="card-content">
+          <h3>What is Sushi?</h3>
+          <p>Sushi is a traditional Japanese dish made with vinegared rice, seafood, vegetables, and sometimes tropical fruits.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image"><img src="https://images.unsplash.com/photo-1562967916-eb82221dfb25?auto=format&fit=crop&w=800&q=80" alt="Nigiri"></div>
+        <div class="card-content">
+          <h3>Nigiri & Maki</h3>
+          <p>Enjoy popular forms like nigiri, maki, sashimi, and temaki—with each style offering a different sushi experience.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image"><img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=80" alt="Sushi plate"></div>
+        <div class="card-content">
+          <h3>Fresh and Flavorful</h3>
+          <p>Good sushi blends fresh ingredients, careful preparation, and beautiful presentation for a tasty meal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<a href="game.html" class="button">▶ Play</a>
-<a href="index.html" class="button">🏠 Back to Home</a>
-</div>
+  <section id="why" class="why-sushi-section">
+    <h2>Why Sushi is Special</h2>
+    <div class="benefits-container">
+      <div class="benefit-card">
+        <span class="benefit-icon">🍣</span>
+        <h3>Healthy Ingredients</h3>
+        <p>Sushi often includes fish, vegetables, and rice, giving a balanced mix of protein, carbs, and nutrients.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🌊</span>
+        <h3>Fresh and Seasonal</h3>
+        <p>The best sushi is made with fresh, seasonal ingredients that highlight Japan's coastal flavors.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🎨</span>
+        <h3>Beautiful Presentation</h3>
+        <p>Sushi chefs take pride in presentation, turning every plate into an artwork of color and texture.</p>
+      </div>
+    </div>
+  </section>
 
-<main class="main-content">
-	<div id="game-container" class="game-container">
-		<!-- p5 canvas will be injected here -->
-	</div>
-</main>
+  <section id="resources" class="resources-section">
+    <h2>Learn More</h2>
+    <p>Explore sushi traditions, tips, and recipes before heading to the game.</p>
+    <ul class="resource-links">
+      <li><a href="#about">Sushi Basics</a></li>
+      <li><a href="#why">Why Sushi Works</a></li>
+      <li><a href="game.html">Play the Sushi Chef Game</a></li>
+    </ul>
+  </section>
 
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Sushi World</h3>
+        <p>This site blends sushi culture with a fun game experience—click Play above to open the chef challenge.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#why">Why Sushi</a></li>
+          <li><a href="game.html">Play</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Sushi World</div>
+  </footer>
 </body>
 </html>
