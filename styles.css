@@ -539,6 +539,146 @@ body {
     opacity: 0.9;
 }
 
+/* CHOOSE YOUR SUSHI SECTION */
+.choose-sushi-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 60px 20px;
+    animation: slideUp 0.8s ease-out;
+}
+
+.choose-sushi-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1a472a;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.chooser-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.chooser-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, white 100%);
+    border-radius: 15px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(102, 126, 234, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.chooser-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.25);
+    border-color: #667eea;
+    background: linear-gradient(135deg, #f0f4ff 0%, white 100%);
+}
+
+.chooser-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.chooser-card h3 {
+    font-size: 1.6rem;
+    color: #1a472a;
+    margin-bottom: 0.5rem;
+}
+
+.chooser-card > p:nth-of-type(1) {
+    font-size: 1rem;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* SELECTION TIPS */
+.selection-tips {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(29, 71, 42, 0.08) 100%);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin-top: 3rem;
+}
+
+.selection-tips h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #1a472a;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tip {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-left: 4px solid #667eea;
+}
+
+.tip:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.tip h4 {
+    color: #1a472a;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.tip p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
 /* ANIMATIONS */
 @keyframes slideDown {
     from {
@@ -619,5 +759,25 @@ body {
     .ingredient-icon,
     .fact-number {
         font-size: 2rem;
+    }
+    
+    .choose-sushi-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .chooser-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .chooser-icon {
+        font-size: 2.5rem;
+    }
+    
+    .selection-tips h3 {
+        font-size: 1.5rem;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
     }
 }
